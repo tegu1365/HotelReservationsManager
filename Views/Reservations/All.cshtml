@@ -1,0 +1,73 @@
+﻿@model ReservationsAllViewModel
+
+@{
+    ViewData["Title"] = "All";
+}
+
+<h1>All Reservations</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Room
+            </th>
+            <th>
+                User
+            </th>
+            <th>
+                Accommodation Date
+            </th>
+            <th>
+                Release Date
+            </th>
+            <th>
+                Breakfast
+            </th>
+            <th>
+                All-Inclusive
+            </th>
+            <th>
+                Due Amount
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccommodationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReleaseDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HaveBreakFast)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsAllInclusive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DueAmount)
+                </td>
+                <td>
+
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

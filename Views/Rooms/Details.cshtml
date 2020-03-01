@@ -1,0 +1,59 @@
+﻿@model RoomsDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Capasity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Capasity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IsFree)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IsFree)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PriceForAdult)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PriceForAdult)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PriceForKid)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PriceForKid)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    @if (this.User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Edit", "Edit","Rooms",new { id=Model.Id})
+        @*<a asp-action="Edit" asp-route-id="@model.Id">Edit</a>*@
+    }
+
+    <a asp-action="All">Back to List</a>
+</div>

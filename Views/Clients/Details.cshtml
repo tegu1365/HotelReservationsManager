@@ -1,0 +1,98 @@
+﻿@model ClientsDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IsAdult)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IsAdult)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reservations)
+        </dt>
+        
+        <dd class="col-sm-10">
+            <table class="col-sm-10">
+                <thead>
+                    <tr>
+                        <th>
+                            Room
+                        </th>
+                        <th>
+                            User
+                        </th>
+                        <th>
+                            Accommodation Date
+                        </th>
+                        <th>
+                            Release Date
+                        </th>
+                        <th>
+                            Breakfast
+                        </th>
+                        <th>
+                            All-Inclusive
+                        </th>
+                        <th>
+                            Due Amount
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Reservations)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RoomNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AccommodationDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReleaseDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HaveBreakFast)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsAllInclusive)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DueAmount)
+                            </td>
+                            <td>
+                        </tr>
+                    }
+            </table>
+        </dd>
+    </dl>
+</div>
+<br />
+<div>
+    @Html.ActionLink("Edit", "Edit", "Clients", new { id = Model.Id })
+    <a asp-action="All">Back to List</a>
+</div>

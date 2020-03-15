@@ -181,3 +181,4 @@ C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Raz
 C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Clients\Search.cshtml.g.cs
 C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Users\Search.cshtml.g.cs
 C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Rooms\Search.cshtml.g.cs
+C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Home\NoUsers.cshtml.g.cs

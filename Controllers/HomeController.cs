@@ -26,6 +26,10 @@ namespace HotelReservationsManager.Controllers
             {
                 return this.View("Home");
             }
+            if(!context.Users.Any())
+            {
+                return this.View("NoUsers");
+            }
 
             return View();
         }

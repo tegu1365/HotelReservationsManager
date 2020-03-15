@@ -17,7 +17,6 @@ namespace HotelReservationsManager.Areas.Identity.Pages.Account
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
         private readonly MyHRManagerDBContext hRManagerDBContext;
-
         public RegisterModel(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
@@ -108,7 +107,6 @@ namespace HotelReservationsManager.Areas.Identity.Pages.Account
                     UCN = Input.UCN, PhoneNumber = Input.Number, AppointmentDate = Input.AppointmentDate, IsActive = true};
 
                 var result = await _userManager.CreateAsync(user, Input.Password);
-                
                 if (result.Succeeded)
                 {
                     if(this.hRManagerDBContext.Users.Count()==1)

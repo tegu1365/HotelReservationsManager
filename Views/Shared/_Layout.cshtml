@@ -29,10 +29,7 @@
 
                         }
                         @if (this.User.IsInRole("Admin"))
-                        {
-                            @*<li class="nav-item">
-                <a class="nav-link nav-link-white" asp-area="Identity" asp-page="/Account/Register">Create User</a>
-            </li>*@
+                        { 
                             <li class="nav-item">
                                 <a class="nav-link nav-link-white" asp-controller="Users" asp-action="All">Users</a>
                             </li>
@@ -40,6 +37,8 @@
 
                         @if (this.User.Identity.IsAuthenticated)
                         {
+                            if (!this.User.IsInRole("NotActive"))
+                            {
                             @*<ul class="navbar-nav">*@
                             <li class="nav-item">
                                 <a class="nav-link nav-link-white" asp-controller="Reservations" asp-action="All">Reservations</a>
@@ -50,10 +49,10 @@
                             <li class="nav-item">
                                 <a class="nav-link nav-link-white" asp-controller="Clients" asp-action="All">Clients</a>
                             </li>
+                            }
                             <li class="nav-item">
                                 <a class="nav-link nav-link-white" asp-area="Identity" asp-page="/Account/Logout">Logout</a>
                             </li>
-                            @*</ul>*@
                         }
                     </ul>
                 </div>

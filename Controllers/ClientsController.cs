@@ -128,11 +128,24 @@ namespace HotelReservationsManager.Controllers
         {
             Client client = await this._context.Clients
                 .Include(client => client.Reservations)
+                .ThenInclude(reservation => reservation.Reservation)
                 .SingleOrDefaultAsync(client => client.Id == id);
-            List<Reservation> reser = client.Reservations
-                .Where(reserv => reserv.Client.Id == client.Id)
-                .Select(res => res.Reservation).ToList();
+            List<ClientReservation> rese = _context.ClientReservations.Where(res => res.Client.Id == client.Id).ToList();
+            List<string> reseIds = new List<string>();
+            List<Reservation> reser = new List<Reservation>();
             List<ReservationsViewModel> clientReservations = new List<ReservationsViewModel>();
+
+            foreach (var r in rese)
+            {
+                reseIds.Add(r.Reservation.Id);
+            }
+
+            foreach (var r in reseIds)
+            {
+                Reservation reservation = new Reservation();
+                reservation = _context.Reservations.Include(user => user.User).Include(room => room.Room).FirstOrDefault(res => res.Id == r);
+                reser.Add(reservation);
+            }
 
             foreach (var r in reser)
             {
@@ -165,7 +178,21 @@ namespace HotelReservationsManager.Controllers
             _context.Clients.Remove(client);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(All));
+        }
+
+        [AllowAnonymous]
+        public async Task<IActionResult> Search(string searched)
+        {
+            var clients = from n in _context.Clients
+                          select n;
+
+            if (!String.IsNullOrEmpty(searched))
+            {
+                clients = clients.Where(x => x.FirstName.Contains(searched) || x.LastName.Contains(searched));
+            }
+
+            return View(await clients.ToListAsync());
         }
     }
 }

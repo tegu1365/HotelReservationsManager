@@ -9,7 +9,12 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-
+<form asp-controller="Clients" asp-action="Search">
+    <p>
+        Search by name: <input type="text" name="Searched">
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -19,7 +24,9 @@
             <th>
                 Email
             </th>
-            <th>Over 18-years-old</th>
+            <th>
+            Over 18-years-old
+            </th>
         </tr>
     </thead>
     <tbody>

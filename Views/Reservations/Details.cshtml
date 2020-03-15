@@ -1,0 +1,97 @@
+﻿@model ReservationsDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ReservationsDetailsViewModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RoomNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RoomNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccommodationDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccommodationDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HaveBreakFast)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HaveBreakFast)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IsAllInclusive)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IsAllInclusive)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DueAmount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DueAmount)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Clients)
+        </dt>
+
+        <dd class="col-sm-10">
+            <table class="col-sm-10">
+                <thead>
+                    <tr>
+                        <th>
+                            Full Name
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Over 18-years-old
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Clients)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FullName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsAdult)
+                            </td>
+                        </tr>
+                    }
+            </table>
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", "Reservations", new {id = Model.Id }) |
+    <a asp-action="All">Back to List</a>
+</div>

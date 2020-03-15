@@ -18,9 +18,12 @@ namespace HotelReservationsManager.Controllers
         private readonly MyHRManagerDBContext _context;
         private int PageSize = 10;
 
-        public UsersController(MyHRManagerDBContext context)
+        private readonly UserManager<User> _userManager;
+
+        public UsersController(MyHRManagerDBContext context, UserManager<User> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         [HttpGet]
@@ -153,15 +156,30 @@ namespace HotelReservationsManager.Controllers
         {
             User user = await _context.Users.FindAsync(id);
             user.IsActive = false;
+            await _userManager.RemoveFromRoleAsync(user, "User");
+            await _userManager.AddToRoleAsync(user, "NotActive");
             user.DateOfDismissal = DateTime.Today;
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
-
             return RedirectToAction(nameof(All));
         }
         private bool UserExists(string id)
         {
             return _context.Users.Any(e => e.Id == id);
+        }
+
+        [AllowAnonymous]
+        public async Task<IActionResult> Search(string searched)
+        {
+            var user = from n in _context.Users
+                          select n;
+
+            if (!String.IsNullOrEmpty(searched))
+            {
+                user = user.Where(x => x.FirstName.Contains(searched) || x.LastName.Contains(searched));
+            }
+
+            return View(await user.ToListAsync());
         }
 
     }

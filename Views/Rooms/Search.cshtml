@@ -1,23 +1,17 @@
-﻿@model RoomAllViewModel
-
+﻿@using HotelReservationsManager.Models.ViewModels.Rooms
+@model IEnumerable<HotelReservationsManager.Data.Models.Room>
 @{
-    ViewData["Title"] = "All";
+    ViewData["Title"] = "Search";
 }
 
-<h1>All Rooms</h1>
+<h1>Search</h1>
+
 @if (this.User.IsInRole("Admin"))
 {
     <p>
         <a asp-action="Create">Create New</a>
     </p>
 }
-<form asp-controller="Rooms" asp-action="Search">
-    <p>
-        Search by number: <input type="text" name="Searched">
-        <input type="submit" value="Filter" />
-    </p>
-</form>
-
 <table class="table">
     <thead>
         <tr>
@@ -38,9 +32,10 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Items)
+        @foreach (Room item in Model)
         {
             <tr>
+
                 <td>
                     @Html.DisplayFor(modelItem => item.number)
                 </td>
@@ -50,9 +45,18 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Capasity)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsFree)
-                </td>
+                @if (item.IsFree)
+                {
+                    <td>
+                        Yes
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        No
+                    </td>
+                }
                 <td>
                     @Html.DisplayFor(modelItem => item.PriceForAdult)
                 </td>
@@ -70,12 +74,4 @@
             </tr>
         }
     </tbody>
-    <ul class="pagination">
-        @for (var i = 1; i <= Model.Pager.PagesCount; i++)
-        {
-            <li class="page-item @(i == Model.Pager.CurrentPage ? "active" : "")">
-                <a asp-route-Pager.CurrentPage="@i" class="page-link">@i</a>
-            </li>
-        }
-    </ul>
 </table>

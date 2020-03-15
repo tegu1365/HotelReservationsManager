@@ -180,5 +180,18 @@ namespace HotelReservationsManager.Controllers
         {
             return _context.Rooms.Any(e => e.Id == id);
         }
+        [AllowAnonymous]
+        public async Task<IActionResult> Search(string searched)
+        {
+            var room = from n in _context.Rooms
+                       select n;
+
+            if (!String.IsNullOrEmpty(searched))
+            {
+                room = room.Where(x => x.number.Contains(searched));
+            }
+
+            return View(await room.ToListAsync());
+        }
     }
 }

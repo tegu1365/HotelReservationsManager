@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using HotelReservationsManager.Data.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace HotelReservationsManager
 {
@@ -46,7 +47,7 @@ namespace HotelReservationsManager
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {
@@ -74,6 +75,42 @@ namespace HotelReservationsManager
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+            CreateRoles(serviceProvider);
+        }
+
+        private void CreateRoles(IServiceProvider serviceProvider)
+        {
+
+            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            Task<IdentityResult> roleResult;
+
+            //Check that there is an Administrator role and create if not
+            Task<bool> hasAdminRole = roleManager.RoleExistsAsync("Admin");
+            hasAdminRole.Wait();
+
+            if (!hasAdminRole.Result)
+            {
+                roleResult = roleManager.CreateAsync(new IdentityRole("Admin"));
+                roleResult.Wait();
+            }
+
+            Task<bool> hasUserRole = roleManager.RoleExistsAsync("User");
+            hasUserRole.Wait();
+
+            if (!hasUserRole.Result)
+            {
+                roleResult = roleManager.CreateAsync(new IdentityRole("User"));
+                roleResult.Wait();
+            }
+
+            Task<bool> hasActiveRole = roleManager.RoleExistsAsync("NotActive");
+            hasActiveRole.Wait();
+
+            if (!hasActiveRole.Result)
+            {
+                roleResult = roleManager.CreateAsync(new IdentityRole("NotActive"));
+                roleResult.Wait();
+            }
         }
     }
 }

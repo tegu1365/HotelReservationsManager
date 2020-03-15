@@ -98,8 +98,6 @@ C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Hot
 C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\HotelReservationsManager.csproj.CopyComplete
 C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\HotelReservationsManager.dll
 C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\HotelReservationsManager.pdb
-C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\HotelReservationsManager.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\HotelReservationsManager.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
@@ -173,3 +171,13 @@ C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\tr\
 C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reservations\Create.cshtml.g.cs
+C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\HotelReservationsManager.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\HotelReservationsManager.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
+C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reservations\Edit.cshtml.g.cs
+C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reservations\Details.cshtml.g.cs
+C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Clients\Search.cshtml.g.cs
+C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Users\Search.cshtml.g.cs
+C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Rooms\Search.cshtml.g.cs

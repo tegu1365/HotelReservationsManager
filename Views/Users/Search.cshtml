@@ -1,21 +1,18 @@
-﻿@model UserAllViewModel
+﻿@using HotelReservationsManager.Models.ViewModels.User
+@model IEnumerable<HotelReservationsManager.Data.Models.User>
 @{
-    ViewData["Title"] = "All";
+    ViewData["Title"] = "Search";
 }
 
-<h1>All Users</h1>
+<h1>Search</h1>
 
 <p>
     <a asp-area="Identity" asp-page="/Account/Register">Create User</a>
 </p>
-<form asp-controller="Users" asp-action="Search">
-    <p>
-        Search by name: <input type="text" name="Searched">
-        <input type="submit" value="Filter" />
-    </p>
-</form>
+
 <table class="table">
     <thead>
+        <tr>
         <tr>
             <th>
                 Username
@@ -31,20 +28,27 @@
             <th>
                 Email
             </th>
-            <th>Appointment Date</th>
+            <th>
+                Appointment Date
+            </th>
             <th>Active</th>
-            <th>Date Of Dismissal</th>
+            <th>
+                Date Of Dismissal
+            </th>
+        </tr>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Items)
+        @foreach (User item in Model)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Username)
+                    @Html.DisplayFor(modelItem => item.UserName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.FullName)
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                    @Html.DisplayFor(modelItem => item.SecondName)
+                    @Html.DisplayFor(modelItem => item.LastName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.UCN)
@@ -58,12 +62,32 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.AppointmentDate)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsActive)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateOfDismissal)
-                </td>
+
+                @if (item.IsActive)
+                {
+                    <td>
+                        Yes
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        No
+                    </td>
+                }
+
+                @if (item.DateOfDismissal == new DateTime())
+                {
+                    <td>
+                        -
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfDismissal)
+                    </td>
+                }
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
@@ -72,12 +96,4 @@
             </tr>
         }
     </tbody>
-    <ul class="pagination">
-        @for (var i = 1; i <= Model.Pager.PagesCount; i++)
-        {
-            <li class="page-item @(i == Model.Pager.CurrentPage ? "active" : "")">
-                <a asp-route-Pager.CurrentPage="@i" class="page-link">@i</a>
-            </li>
-        }
-    </ul>
 </table>

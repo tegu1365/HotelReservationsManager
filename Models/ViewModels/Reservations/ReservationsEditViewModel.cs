@@ -7,22 +7,19 @@ using System.Threading.Tasks;
 
 namespace HotelReservationsManager.Models.ViewModels.Reservations
 {
-    public class ReservationsCreateViewModel
+    public class ReservationsEditViewModel
     {
+        public string Id { get;set; }
         public virtual Room Room { get; set; }
-        public virtual Data.Models.User User { get; set; }
-        public List<ReservationCreateClientViewModel> CreateClient { get; set; }
         public List<ReservationCreateRoomViewModel> RoomsAdded { get; set; }
-        [Required]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public string RoomId { get; set; }
+        public virtual Data.Models.User User { get; set; }
         [DataType(DataType.Date)]
         public DateTime AccommodationDate { get; set; }
-        [Required]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
         public bool HaveBreakFast { get; set; }
         public bool IsAllInclusive { get; set; }
-       
+        public decimal DueAmount { get; set; }
     }
 }

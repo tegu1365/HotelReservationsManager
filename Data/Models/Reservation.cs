@@ -16,5 +16,10 @@ namespace HotelReservationsManager.Data.Models
         public bool IsAllInclusive { get; set; }
         [Column(TypeName = "decimal(18,4)")]
         public decimal DueAmount { get; set; }
+
+        public Reservation()
+        { }
+
+       
     }
 }

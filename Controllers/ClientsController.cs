@@ -35,6 +35,7 @@ namespace HotelReservationsManager.Controllers
                 Id = client.Id,
                 FullName = $"{client.FirstName} {client.LastName}",
                 Email = client.Email,
+                Number = client.Number,
                 IsAdult = client.IsAdult ? "Yes" : "No",
             }).ToListAsync();
 
@@ -65,6 +66,7 @@ namespace HotelReservationsManager.Controllers
                 FirstName = clientsCreateViewModel.FirstName,
                 LastName = clientsCreateViewModel.LastName,
                 Email = clientsCreateViewModel.Email,
+                Number= clientsCreateViewModel.Number,
                 IsAdult = clientsCreateViewModel.IsAdult
             };
 
@@ -95,6 +97,7 @@ namespace HotelReservationsManager.Controllers
                 FirstName = client.FirstName,
                 LastName = client.LastName,
                 Email = client.Email,
+                Number=client.Number,
                 IsAdult = client.IsAdult
             };
 
@@ -116,6 +119,7 @@ namespace HotelReservationsManager.Controllers
             client.FirstName = model.FirstName;
             client.LastName = model.LastName;
             client.Email = model.Email;
+            client.Number = model.Number;
             client.IsAdult = model.IsAdult;
             this._context.Update(client);
             await this._context.SaveChangesAsync();
@@ -167,6 +171,7 @@ namespace HotelReservationsManager.Controllers
             {
                 FullName = $"{client.FirstName} {client.LastName}",
                 Email = client.Email,
+                Number=client.Number,
                 IsAdult = client.IsAdult ? "Yes" : "No",
                 Reservations = clientReservations
             };

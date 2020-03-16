@@ -16,6 +16,7 @@ namespace HotelReservationsManager.Models.ViewModels.Reservations
         [Required]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [DataType(DataType.Date)]
+        
         public DateTime AccommodationDate { get; set; }
         [Required]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]

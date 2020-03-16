@@ -25,7 +25,10 @@
                 Email
             </th>
             <th>
-            Over 18-years-old
+                Number
+            </th>
+            <th>
+                Over 18-years-old
             </th>
         </tr>
     </thead>
@@ -39,7 +42,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
-               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.IsAdult)
                 </td>

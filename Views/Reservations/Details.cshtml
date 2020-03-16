@@ -68,6 +68,9 @@
                             Email
                         </th>
                         <th>
+                            Number
+                        </th>
+                        <th>
                             Over 18-years-old
                         </th>
                     </tr>
@@ -75,17 +78,20 @@
                 <tbody>
                     @foreach (var item in Model.Clients)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.FullName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Email)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.IsAdult)
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Number)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsAdult)
+                        </td>
+                    </tr>
                     }
             </table>
         </dd>

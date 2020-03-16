@@ -14,6 +14,7 @@ namespace HotelReservationsManager.Data.Models
         public string FirstName { get; set; }
         [StringLength(50)]
         public string LastName { get; set; }
+        public string Number { get; set; }
         public string Email { get; set; }
         public bool IsAdult { get; set; }
         public ICollection<ClientReservation> Reservations { get; set; }

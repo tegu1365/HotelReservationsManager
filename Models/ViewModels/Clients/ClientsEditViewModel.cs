@@ -21,6 +21,8 @@ namespace HotelReservationsManager.Models.ViewModels.Clients
         [EmailAddress]
         public string Email { get; set; }
         [Required]
+        public string Number { get; set; }
+        [Required]
         public bool IsAdult { get; set; }
     }
 }

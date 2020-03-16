@@ -63,7 +63,6 @@
     @if (this.User.IsInRole("Admin"))
     {
         @Html.ActionLink("Edit", "Edit","Users",new { id=Model.Id})
-        @*<a asp-action="Edit" asp-route-id="@model.Id">Edit</a>*@
     }
 
     <a asp-action="All">Back to List</a>

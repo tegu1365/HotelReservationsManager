@@ -173,8 +173,6 @@ C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\zh-
 C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reservations\Create.cshtml.g.cs
 C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\MimeKit.dll
 C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
-C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\HotelReservationsManager.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\HotelReservationsManager.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
 C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reservations\Edit.cshtml.g.cs
 C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reservations\Details.cshtml.g.cs
@@ -182,3 +180,11 @@ C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Raz
 C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Users\Search.cshtml.g.cs
 C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Rooms\Search.cshtml.g.cs
 C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\Razor\Views\Home\NoUsers.cshtml.g.cs
+C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+C:\Users\tdpet\source\repos\HotelReservationsManager\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\HotelReservationsManager.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\tdpet\source\repos\HotelReservationsManager\obj\Debug\netcoreapp3.1\HotelReservationsManager.MvcApplicationPartsAssemblyInfo.cache

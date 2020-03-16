@@ -289,6 +289,7 @@ namespace HotelReservationsManager.Controllers
                     Id = c.Id,
                     FullName = $"{c.FirstName} {c.LastName}",
                     Email = c.Email,
+                    Number=c.Number,
                     IsAdult = c.IsAdult ? "Yes" : "No",
                 };
                 clients.Add(clientReservationsA);
